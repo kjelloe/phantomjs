@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 # [PhantomJS](http://phantomjs.org) - Scriptable Headless WebKit
 
 PhantomJS ([www.phantomjs.org](http://phantomjs.org)) is a headless WebKit scriptable with JavaScript. It is used by hundreds of [developers](http://phantomjs.org/buzz.html) and dozens of [organizations](http://phantomjs.org/users.html) for web-related development workflow.
 
 <<<<<<< HEAD
 This fork is a recipe for building phantomjs for windows x86 using Visual Studio 2012 tool chain.
+=======
+This fork is a receipe for building phantomjs for windows x86 using Visual Studio 2012 tool chain.
+>>>>>>> Initial readme
 
 See https://github.com/ariya/phantomjs for original. 
 
@@ -17,6 +21,7 @@ Windows-binaries in **bin-win32** is based on phantomjs/master-branch cloned 17.
 - Git 1.9.x: http://git-scm.com/download/win
 
 ## PREBUILD ENVIRONMENT SETTINGS
+<<<<<<< HEAD
 - **Start-Run "Developer Command Prompt for VS2012"** 
 ```sh
 "%programfiles(x86)%\Microsoft Visual Studio 11.0\Common7\Tools\VsDevCmd.bat" 
@@ -43,11 +48,24 @@ SET QMAKESPEC=win32-msvc2012
 build.cmd:10 set 3RD_PARTY_LIBRARIES_REPO_BRANCH=master 
 build.cmd:13  set 3RD_PARTY_LIBRARIES_REPO_BRANCH=msvc2012_debug
 ```
+=======
+- ** Start-Run "Developer Command Prompt for VS2012" ** from "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\VsDevCmd.bat"
+- ** Set visual studio compiler variables:** "%programfiles(x86)%\Microsoft Visual Studio 11.0\Common7\Tools\vsvars32.bat"
+- ** Add perl, python, ruby and git to path (NOTE: Paths must be in this particular order with git last due to version of GIT/PERL) ** SET PATH=%PATH%;C:\Perl64\bin;C:\Python27;C:\Ruby193\bin;%programfiles(x86)%\Git\bin;
+- ** Set ssl-info for git if needed for clone:** git config --system http.sslcainfo "%programfiles(x86)%\Git\bin\curl-ca-bundle.crt"
+- ** Add QT spesific build parameters - Adjust according to location of git your git repo ** 
+	SET SQLITE3SRCDIR=C:\GIT\phantomjs-build\src\qt\qtbase\src\3rdparty\sqlite
+	SET QMAKESPEC=win32-msvc2012
+- ** Change build.cmd to set which tool chain to use:** 
+	build.cmd:10 set 3RD_PARTY_LIBRARIES_REPO_BRANCH=master (which currently is msvc2012 in https://github.com/Vitallium/phantomjs-3rdparty-win)
+	build.cmd:13  set 3RD_PARTY_LIBRARIES_REPO_BRANCH=msvc2012_debug
+>>>>>>> Initial readme
 
 ## BUILD
 Run 'build.cmd' which will run for 2-4 hours depending on your computing power.
 
 ## AFTER BUILD - BEFORE RUNNING
+<<<<<<< HEAD
 In order for your custom phantomjs master build to run the following must be installed and available at runtime:
 - OpenSSL (i.e. Win32 OpenSSL v1.0.1j) from http://slproweb.com/download/Win32OpenSSL-1_0_1j.exe **Make sure you select option to copy binaries to windows system directory**
 - Microsoft Visual C++ redist 2012 x86: http://www.microsoft.com/en-us/download/confirmation.aspx?id=30679
@@ -97,6 +115,14 @@ and many others [related projects](http://phantomjs.org/related-projects.html).
 PhantomJS is free software/open source, and is distributed under the [BSD license](http://opensource.org/licenses/BSD-3-Clause). It contains third-party code, see the included `third-party.txt` file for the license information on third-party code.
 
 PhantomJS is created and maintained by [Ariya Hidayat](http://ariya.ofilabs.com/about) (Twitter: [@ariyahidayat](http://twitter.com/ariyahidayat)), with the help of [many contributors](https://github.com/ariya/phantomjs/contributors). Follow the official Twitter stream [@PhantomJS](http://twitter.com/PhantomJS) to get the frequent development updates.
+=======
+In order to yor custom phantomjs master build the following must be installed and available at runtime:
+- OpenSSL (i.e. Win32 OpenSSL v1.0.1j) from http://slproweb.com/download/Win32OpenSSL-1_0_1j.exe ** Make sure you select option to copy binaries to windows system directory **
+- Microsoft Visual C++ redist 2012 x86: http://www.microsoft.com/en-us/download/confirmation.aspx?id=30679
+- Microsoft Visual C++ redist 2012 64-bit: http://www.microsoft.com/en-us/download/confirmation.aspx?id=30679
+
+** NOTE: ** Before running phantomjs custom built binary for the first time: Start a new command prompt for openssl to load properly for the first time.
+>>>>>>> Initial readme
 
 >>>>>>> Issue #12897: README is updated with 2.0 info.
 
