@@ -7,10 +7,10 @@ if /i "%1" == "debug" (
 )
 set ROOT_DIR=%CD%
 set 3RD_PARTY_LIBRARIES_REPO_URL=https://github.com/Vitallium/phantomjs-3rdparty-win
-set 3RD_PARTY_LIBRARIES_REPO_BRANCH=msvc2013
+set 3RD_PARTY_LIBRARIES_REPO_BRANCH=master
 
 if /i BUILD_TYPE == "debug" (
-    set 3RD_PARTY_LIBRARIES_REPO_BRANCH=msvc2013_debug
+    set 3RD_PARTY_LIBRARIES_REPO_BRANCH=msvc2012_debug
 )
 
 set BUILD_DATESTAMP=%date:~-4,4%%date:~-7,2%%date:~-10,2%
