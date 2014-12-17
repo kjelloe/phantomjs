@@ -16,14 +16,14 @@ Windows-binaries in **bin-win32** is based on phantomjs/master-branch cloned 17.
 - Git 1.9.x: http://git-scm.com/download/win
 
 ## PREBUILD ENVIRONMENT SETTINGS
-- ** Start-Run "Developer Command Prompt for VS2012" ** from "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\VsDevCmd.bat"
-- ** Set visual studio compiler variables:** "%programfiles(x86)%\Microsoft Visual Studio 11.0\Common7\Tools\vsvars32.bat"
-- ** Add perl, python, ruby and git to path (NOTE: Paths must be in this particular order with git last due to version of GIT/PERL) ** SET PATH=%PATH%;C:\Perl64\bin;C:\Python27;C:\Ruby193\bin;%programfiles(x86)%\Git\bin;
-- ** Set ssl-info for git if needed for clone:** git config --system http.sslcainfo "%programfiles(x86)%\Git\bin\curl-ca-bundle.crt"
-- ** Add QT spesific build parameters - Adjust according to location of git your git repo ** 
+- **Start-Run "Developer Command Prompt for VS2012"** from "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\VsDevCmd.bat"
+- **Set visual studio compiler variables:** "%programfiles(x86)%\Microsoft Visual Studio 11.0\Common7\Tools\vsvars32.bat"
+- **Add perl, python, ruby and git to path (NOTE: Paths must be in this particular order with git last due to version of GIT/PERL)** SET PATH=%PATH%;C:\Perl64\bin;C:\Python27;C:\Ruby193\bin;%programfiles(x86)%\Git\bin;
+- **Set ssl-info for git if needed for clone:** git config --system http.sslcainfo "%programfiles(x86)%\Git\bin\curl-ca-bundle.crt"
+- **Add QT spesific build parameters - Adjust according to location of git your git repo** 
 	SET SQLITE3SRCDIR=C:\GIT\phantomjs-build\src\qt\qtbase\src\3rdparty\sqlite
 	SET QMAKESPEC=win32-msvc2012
-- ** Change build.cmd to set which tool chain to use:** 
+- **Change build.cmd to set which tool chain to use:** 
 	build.cmd:10 set 3RD_PARTY_LIBRARIES_REPO_BRANCH=master (which currently is msvc2012 in https://github.com/Vitallium/phantomjs-3rdparty-win)
 	build.cmd:13  set 3RD_PARTY_LIBRARIES_REPO_BRANCH=msvc2012_debug
 
@@ -36,7 +36,7 @@ In order to yor custom phantomjs master build the following must be installed an
 - Microsoft Visual C++ redist 2012 x86: http://www.microsoft.com/en-us/download/confirmation.aspx?id=30679
 - Microsoft Visual C++ redist 2012 64-bit: http://www.microsoft.com/en-us/download/confirmation.aspx?id=30679
 
-** NOTE: ** Before running phantomjs custom built binary for the first time: Start a new command prompt for openssl to load properly for the first time.
+**NOTE:** Before running phantomjs custom built binary for the first time: Start a new command prompt for openssl to load properly for the first time.
 
 
 
