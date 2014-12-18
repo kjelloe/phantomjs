@@ -36,7 +36,7 @@ git config --system http.sslcainfo "%programfiles(x86)%\Git\bin\curl-ca-bundle.c
 ```sh
 SET SQLITE3SRCDIR=C:\GIT\phantomjs-build\src\qt\qtbase\src\3rdparty\sqlite
 SET QMAKESPEC=win32-msvc2012
-```sh
+```
 - **Change build.cmd to set which tool chain to use:** (NOTE: Currently master branch is msvc2012, see: https://github.com/Vitallium/phantomjs-3rdparty-win)
 ```sh
 build.cmd:10 set 3RD_PARTY_LIBRARIES_REPO_BRANCH=master 
