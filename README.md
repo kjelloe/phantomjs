@@ -17,31 +17,31 @@ Windows-binaries in **bin-win32** is based on phantomjs/master-branch cloned 17.
 
 ## PREBUILD ENVIRONMENT SETTINGS
 - **Start-Run "Developer Command Prompt for VS2012"** 
-	```	
-	"%programfiles(x86)%\Microsoft Visual Studio 11.0\Common7\Tools\VsDevCmd.bat" 
-	```
+```sh
+"%programfiles(x86)%\Microsoft Visual Studio 11.0\Common7\Tools\VsDevCmd.bat" 
+```
 - **Set Visual Studio compiler variables:** 
-	```
-	"%programfiles(x86)%\Microsoft Visual Studio 11.0\Common7\Tools\vsvars32.bat"
-	```
+```sh
+"%programfiles(x86)%\Microsoft Visual Studio 11.0\Common7\Tools\vsvars32.bat"
+```
 - **Add perl, python, ruby and git to path (NOTE: Paths must be in this particular order with git last due to version conflict with GIT/PERL)** 
-	```
-	SET PATH=%PATH%;C:\Perl64\bin;C:\Python27;C:\Ruby193\bin;%programfiles(x86)%\Git\bin;
-	```
+```sh
+SET PATH=%PATH%;C:\Perl64\bin;C:\Python27;C:\Ruby193\bin;%programfiles(x86)%\Git\bin;
+```
 - **Set ssl-info for git, if needed for git clone:** 
-	```
-	git config --system http.sslcainfo "%programfiles(x86)%\Git\bin\curl-ca-bundle.crt"
-	```
+```sh
+git config --system http.sslcainfo "%programfiles(x86)%\Git\bin\curl-ca-bundle.crt"
+```
 - **Add QT specific build parameters - Adjust according to location of your git repo**
-	```
-	SET SQLITE3SRCDIR=C:\GIT\phantomjs-build\src\qt\qtbase\src\3rdparty\sqlite
-	SET QMAKESPEC=win32-msvc2012
-	```
+```sh
+SET SQLITE3SRCDIR=C:\GIT\phantomjs-build\src\qt\qtbase\src\3rdparty\sqlite
+SET QMAKESPEC=win32-msvc2012
+```sh
 - **Change build.cmd to set which tool chain to use:** (NOTE: Currently master branch is msvc2012, see: https://github.com/Vitallium/phantomjs-3rdparty-win)
-	```
-	build.cmd:10 set 3RD_PARTY_LIBRARIES_REPO_BRANCH=master 
-	build.cmd:13  set 3RD_PARTY_LIBRARIES_REPO_BRANCH=msvc2012_debug
-	```
+```sh
+build.cmd:10 set 3RD_PARTY_LIBRARIES_REPO_BRANCH=master 
+build.cmd:13  set 3RD_PARTY_LIBRARIES_REPO_BRANCH=msvc2012_debug
+```
 
 ## BUILD
 Run 'build.cmd' which will run for 2-4 hours depending on your computing power.
