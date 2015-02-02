@@ -32,6 +32,7 @@ ENDLOCAL
 
 rem ========================================================================================================
 :build
+echo Build start %time%
 SETLOCAL EnableExtensions EnableDelayedExpansion
 set _3RDPARTY=!ROOT_DIR!\src\qt\3rdparty
 
@@ -116,6 +117,7 @@ if EXIST !ROOT_DIR!\bin\phantomjs.exe (
     echo PhantomJS: !PHANTOMJS_LOG_FILE!
     echo:
 )
+echo Build end %time%
 EXIT /b
 
 rem ========================================================================================================

@@ -10,6 +10,5 @@ ECHO "edit src/qt/preconfig.cmd"
 ECHO "change !BUILD_TYPE! to release "
 
 ECHO "In order to run custom build phantomjs pre 2.0 the following must be installed available at runtime:"
-ECHO "OpenSSL: Win32 OpenSSL v1.0.1j"
 ECHO "Microsoft Visual C++ redist 2012 x86: http://www.microsoft.com/en-us/download/confirmation.aspx?id=30679"
 ECHO "Microsoft Visual C++ redist 2012 64-bit: http://www.microsoft.com/en-us/download/confirmation.aspx?id=30679"
