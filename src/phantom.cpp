@@ -196,7 +196,15 @@ bool Phantom::execute()
     if (m_config.isWebdriverMode()) {                                   // Remote WebDriver mode requested
         qDebug() << "Phantom - execute: Starting Remote WebDriver mode";
 
-        if (!Utils::injectJsInFrame(":/ghostdriver/main.js", QString(), m_scriptFileEnc, QDir::currentPath(), m_page->mainFrame(), true)) {
+		QString ghostdriverWorkingDir = QDir::currentPath();
+		QString ghostdriverPath = ":/ghostdriver/main.js";              // Use bundled ghostdriver by default
+		if(!m_config.ghostdriverPath().isEmpty()) {                     // If alternate ghostdriver provided, use it instead
+			ghostdriverPath = m_config.ghostdriverPath() + "\\src\\main.js" ;
+			ghostdriverWorkingDir = QFileInfo(ghostdriverPath).absolutePath(); 
+			qDebug() << QString("Phantom - execute: Using ghostdriver from provided path: '%1'").arg(ghostdriverPath);
+		}
+		
+        if (!Utils::injectJsInFrame(ghostdriverPath, QString(), m_scriptFileEnc, ghostdriverWorkingDir, m_page->mainFrame(), true)) {
             m_returnValue = -1;
             return false;
         }
@@ -382,8 +390,14 @@ bool Phantom::injectJs(const QString &jsFilePath)
 
     // If in Remote Webdriver Mode, we need to manipulate the PATH, to point it to a resource in `ghostdriver.qrc`
     if (webdriverMode()) {
-        pre = ":/ghostdriver/";
-        qDebug() << "Phantom - injectJs: prepending" << pre;
+	
+		// If ghostdriver path specified, use it instead of bundled version
+		if(!m_config.ghostdriverPath().isEmpty()) {
+			qDebug() << "Phantom - injectJs: ghostdriver path " << m_config.ghostdriverPath();
+		} else {
+			pre = ":/ghostdriver/";
+			qDebug() << "Phantom - injectJs: prepending" << pre;			
+		}
     }
 
     if (m_terminated)
