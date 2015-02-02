@@ -6,7 +6,7 @@ pushd qtbase
 
 set QT_CONFIG=
 
-set QT_CONFIG=!QT_CONFIG! -%BUILD_TYPE%
+set QT_CONFIG=!QT_CONFIG! -release
 set QT_CONFIG=!QT_CONFIG! -static
 set QT_CONFIG=!QT_CONFIG! -opensource
 set QT_CONFIG=!QT_CONFIG! -confirm-license
