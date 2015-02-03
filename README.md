@@ -46,7 +46,6 @@ build.cmd:13  set 3RD_PARTY_LIBRARIES_REPO_BRANCH=msvc2012_debug
 Run 'build.cmd' which will run for 2-4 hours depending on your computing power.
 
 ## AFTER BUILD - BEFORE RUNNING
-<<<<<<< HEAD
 In order for your custom phantomjs master build to run the following must be installed and available at runtime:
 - OpenSSL (i.e. Win32 OpenSSL v1.0.1j) from http://slproweb.com/download/Win32OpenSSL-1_0_1j.exe **Make sure you select option to copy binaries to windows system directory**
 - Microsoft Visual C++ redist 2012 x86: http://www.microsoft.com/en-us/download/confirmation.aspx?id=30679
